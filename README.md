@@ -2,26 +2,96 @@
 # zettabyte-blog
 
 simple zettabyte blog include crud articles & comments
-## End point
+## API Reference
 
-### Article
+#### Headers
+```http
+  Content-Type : application/json
+```
 
-[POST] /articles
+#### Create Article
+```http
+  POST /articles
+```
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `title` | `string` | **Required**. Title |
+| `subTitle` | `string` | **Required**. Subtitle |
+| `author` | `string` | **Required**. Author |
+| `article` | `string` | **Required**. Article |
 
-[GET] /articles/all?title=&author=&page=1&size=10&sort=_id&dir=1
+#### Get Article
+```http
+  GET /articles/{articleId}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `articleId` | `string` | **Required**. Article Id of item to fetch |
 
-[GET] /articles/{articleId}
+#### Update Article
+```http
+  PUT /articles/{articleId}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `articleId` | `string` | **Required**. Article Id of item to fetch |
 
-[PUT] /articles/{articleId}
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `title` | `string` | **Required**. Title |
+| `subTitle` | `string` | **Required**. Subtitle |
+| `author` | `string` | **Required**. Author |
+| `article` | `string` | **Required**. Article |
 
-[DELETE] /articles/{articleId}
+#### Delete Article
+```http
+  DELETE /articles/{articleId}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `articleId` | `string` | **Required**. Article Id of item to fetch |
 
-### Comment
+#### Create Comment
+```http
+  POST /articles/{articleId}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `articleId` | `string` | **Required**. Article Id of item to fetch |
 
-[POST] /articles/{articleId}
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Title |
+| `comment` | `string` | **Required**. Subtitle |
 
-[GET] /articles/{articleId}/{commentId}
+#### Get Comment
+```http
+  GET /articles/{articleId}/{commentId}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `articleId` | `string` | **Required**. Article Id of item to fetch |
+| `commentId` | `string` | **Required**. Comment Id of item to fetch |
 
-[PUT] /articles/{articleId}/{commentId}
+#### Update Comment
+```http
+  PUT /articles/{articleId}/{commentId}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `articleId` | `string` | **Required**. Article Id of item to fetch |
+| `commentId` | `string` | **Required**. Comment Id of item to fetch |
 
-[DELETE] /articles/{articleId}/{commentId}
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Title |
+| `comment` | `string` | **Required**. Subtitle |
+
+#### Delete Comment
+```http
+  DELETE /articles/{articleId}/{commentId}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `articleId` | `string` | **Required**. Article Id of item to fetch |
+| `commentId` | `string` | **Required**. Comment Id of item to fetch |
