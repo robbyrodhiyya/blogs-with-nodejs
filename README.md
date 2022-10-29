@@ -20,6 +20,19 @@ simple zettabyte blog include crud articles & comments
 | `author` | `string` | **Required**. Author |
 | `article` | `string` | **Required**. Article |
 
+#### Get Articles
+```http
+  GET /articles/all
+```
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `title` | `string` | Title |
+| `author` | `string` | Author |
+| `page` | `int` | Page |
+| `size` | `int` | Size |
+| `sort` | `int` | Sort by |
+| `dir` | `int` | Direction (1=asc, -1=desc) |
+
 #### Get Article
 ```http
   GET /articles/{articleId}
