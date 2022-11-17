@@ -1,7 +1,7 @@
 
-# zettabyte-blog
+# blog-app
 
-simple zettabyte blog include crud articles & comments
+simple blog app include crud articles & comments
 ## API Reference
 
 #### Headers
